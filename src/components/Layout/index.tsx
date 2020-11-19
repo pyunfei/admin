@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Layout } from 'antd'
 import { Footer } from 'antd/lib/layout/layout';
 import Sided from  './Sided';
-import './index.less';
+import styles from './index.module.less';
 
-import Home from '../../views/Home';
+// import Home from '../../views/Home';
 import Edit from '../../views/Edit';
 
 const { Header, Sider, Content } = Layout;
@@ -24,7 +24,7 @@ const LayOut = () => {
             console.log(collapsed, type);
           }}
         >
-          <div className="logo" />
+          <div className={styles.logo} />
           <Sided />
         </Sider>
         <Layout>
