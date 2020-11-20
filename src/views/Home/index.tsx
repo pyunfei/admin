@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Card, Col, Row, Descriptions, Badge } from 'antd';
 
-import './index.less';
+import styles from './index.module.less';
 
 const Index = () => {
   return (<div className="site-card-wrapper">
@@ -23,7 +23,7 @@ const Index = () => {
       </Col>
     </Row>
 
-    <Row className="home_card">
+    <Row className={styles.home_card}>
       <Col span={24}>
         <Card bordered={false}>
           <Descriptions title="User Info" bordered>

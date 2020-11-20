@@ -1,14 +1,54 @@
 .edit_box {
   height: calc(100vh - 155px);
   overflow-y: auto;
+  box-sizing: border-box;
 
-  .wrapper {
-    overflow: hidden;
-    margin: 0 auto;
-    padding: 10px 0;
-    background-color: #fff;
-    border-radius: 5px;
+  img, p ,div, span {
+    width: 100%;
   }
+
+  .p{
+    position: absolute;
+    user-select: auto;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    cursor: move;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(221, 221, 221);
+    background: rgb(240, 240, 240);
+    transform: translate(36px, 42px);
+    max-width: 9.0072e+15px;
+    max-height: 9.0072e+15px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
+  &[data-type="drag"] {
+    overflow-x: hidden;
+  }
+
+  &[data-type="container"] {
+    margin: 0;
+  }
+  
+  .wrapper {
+    width: 100%;
+    height: calc(100vh - 155px);
+    margin: 0;
+    border: 1px solid #f0f0f0;
+    transition: all 0.2s ease-in-out;
+
+    &[data-active="true"] {
+      background: #000000;
+      opacity: 0.39;
+    }
+  }
+}
+
 
   .list {
     list-style: none;
@@ -30,6 +70,3 @@
     transform: scale(1.06);
     opacity: 0.7;
   }
-
-}
-
