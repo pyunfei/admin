@@ -4,8 +4,8 @@ import { Footer } from 'antd/lib/layout/layout';
 import Sided from  './Sided';
 import styles from './index.module.less';
 
-// import Home from '../../views/Home';
-import Edit from '../../views/Edit';
+import Home from '../../views/Home';
+// import Edit from '../../views/Edit';
 
 const { Header, Sider, Content } = Layout;
 
@@ -31,8 +31,8 @@ const LayOut = () => {
           <Header className="site-layout-sub-header-background" style={{ padding: 0 }} />
           <Content >
             <div className="site-layout-background" style={{ padding: 24}}>
-              {/* <Home /> */}
-              <Edit />
+              <Home />
+              {/* <Edit /> */}
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>

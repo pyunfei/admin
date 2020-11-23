@@ -3,8 +3,19 @@ import { Card, Col, Row, Descriptions, Badge } from 'antd';
 
 import styles from './index.module.less';
 
+
+import { Button } from '../../widget/index';
+
 const Index = () => {
   return (<div className="site-card-wrapper">
+    <Row>
+      <Col span={8}>
+        <Card bordered={false}>
+          <Button type="primary">_</Button>
+        </Card>
+      </Col>
+    </Row>
+
     <Row gutter={16}>
       <Col span={8}>
         <Card title="收藏" bordered={false}>
@@ -57,6 +68,7 @@ const Index = () => {
         </Card>
       </Col>
     </Row>
+
   </div>)
 }
 
