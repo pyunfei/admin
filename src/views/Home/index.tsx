@@ -1,17 +1,52 @@
 import * as React from 'react'
-import { Card, Col, Row, Descriptions, Badge } from 'antd';
+import { Card, Col, Row, Descriptions, Badge, Button } from 'antd';
 
 import styles from './index.module.less';
 
-
-import { Button } from '../../widget/index';
+import { Button as MButton } from '../../widget/index';
 
 const Index = () => {
   return (<div className="site-card-wrapper">
-    <Row>
+    <Row gutter={16}>
       <Col span={8}>
         <Card bordered={false}>
-          <Button type="primary">_</Button>
+          <Button>default</Button>
+          <Button disabled type="primary">primary</Button>
+          <Button size="large">large</Button>
+          <Button ghost>ghost</Button>
+          <Button type="dashed">dashed</Button>
+          <Button size="small">small</Button>
+          <Button type="default">default</Button>
+          <Button type="link">Link</Button>
+          <Button danger>danger</Button>
+          <Button  shape="circle" type="primary">circle</Button>
+          <Button  shape="round" type="primary">round</Button>
+          <hr/>
+          <MButton type="default">default</MButton>
+          <hr/>
+          <MButton type="dashed">dashed</MButton>
+          <hr/>
+          <MButton type="link">link</MButton>
+          <hr/>
+          <MButton type="primary">primary</MButton>
+          <hr/>
+          <MButton type="danger">danger</MButton>
+          <hr/>
+          <MButton type="danger" shape="circle">circle</MButton>
+          <hr/>
+          <MButton shape="round" type="danger">round</MButton>
+          <hr/>
+          <MButton disabled type="danger" size="large">大的</MButton>
+          <hr/>
+          <MButton disabled type="primary" onClick={() => console.log('l')} size="small">小的</MButton>
+          <hr/>
+          <MButton type="primary" style={{ background: 'red'}} onClick={() => console.log('ll')}>自定义</MButton>
+        </Card>
+      </Col>
+
+      <Col span={8}>
+        <Card bordered={false}>
+          123
         </Card>
       </Col>
     </Row>

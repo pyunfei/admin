@@ -14,7 +14,7 @@ const LayOut = () => {
     <div className="layout_container">
       <Layout className="layout_container">
         <Sider
-          collapsed={true}
+          // collapsed={true}
           breakpoint="lg"
           collapsedWidth="0"
           onBreakpoint={(broken: any) => {
