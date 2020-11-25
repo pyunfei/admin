@@ -6,6 +6,7 @@ import styles from './index.module.less';
 import { Button as MButton } from '../../widget/index';
 // import { Icon as MIcon } from '../../widget/index';
 import { Image as MImage } from '../../widget/index';
+import { Radio as MRadio } from '../../widget/index';
 
 const Index = () => {
   return (<div className="site-card-wrapper">
@@ -67,6 +68,12 @@ const Index = () => {
             onClick={() => console.log('456')}
             src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
           />
+        </Card>
+      </Col>
+    
+      <Col span={8}>
+        <Card bordered={false}>
+          <MRadio />
         </Card>
       </Col>
     </Row>
