@@ -1,27 +1,34 @@
 import * as React from 'react'
 import { Layout } from 'antd'
 import { Footer } from 'antd/lib/layout/layout';
-import Sided from  './Sided';
+import Sided from './Sided';
 import styles from './index.module.less';
 
 import Home from '../../views/Home';
+import Drag from '../../views/Drag';
 // import Edit from '../../views/Edit';
 
 const { Header, Sider, Content } = Layout;
 
 const LayOut = () => {
+  const [show, setShow] = React.useState<boolean>(false);
   return (
     <div className="layout_container">
       <Layout className="layout_container">
         <Sider
-          // collapsed={true}
+          collapsed={show}
           breakpoint="lg"
           collapsedWidth="0"
-          onBreakpoint={(broken: any) => {
+          onBreakpoint={broken => {
             console.log(broken);
+            // if(broken) return;
+            // setShow(broken);
           }}
-          onCollapse={(collapsed: any, type: any) => {
+          onCollapse={(collapsed, type) => {
             console.log(collapsed, type);
+            if(type === "clickTrigger"){
+              setShow(collapsed);
+            }
           }}
         >
           <div className={styles.logo} />
@@ -30,8 +37,9 @@ const LayOut = () => {
         <Layout>
           <Header className="site-layout-sub-header-background" style={{ padding: 0 }} />
           <Content >
-            <div className="site-layout-background" style={{ padding: 24}}>
-              <Home />
+            <div className="site-layout-background" style={{ padding: 24 }}>
+              {/* <Home /> */}
+              <Drag />
               {/* <Edit /> */}
             </div>
           </Content>
