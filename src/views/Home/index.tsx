@@ -73,7 +73,10 @@ const Index = () => {
     
       <Col span={8}>
         <Card bordered={false}>
-          <MRadio />
+          <MRadio style={{ color: 'red'}} onClick={(e) => console.log(e)}/>
+          <MRadio>哈哈哈</MRadio>
+          <input type="radio" />
+          <input type="checkbox" />
         </Card>
       </Col>
     </Row>
