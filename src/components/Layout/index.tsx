@@ -2,15 +2,16 @@ import * as React from 'react'
 import { Layout } from 'antd'
 import { Footer } from 'antd/lib/layout/layout';
 import Sided from './Sided';
+import Head from './Head';
 import styles from './index.module.less';
-
-import Home from '../../views/Home';
-import Drag from '../../views/Drag';
-// import Edit from '../../views/Edit';
 
 const { Header, Sider, Content } = Layout;
 
-const LayOut = () => {
+interface IProps {
+  children?: React.ReactNode;
+}
+
+const LayOut = (props: IProps) => {
   const [show, setShow] = React.useState<boolean>(false);
   return (
     <div className="layout_container">
@@ -21,8 +22,6 @@ const LayOut = () => {
           collapsedWidth="0"
           onBreakpoint={broken => {
             console.log(broken);
-            // if(broken) return;
-            // setShow(broken);
           }}
           onCollapse={(collapsed, type) => {
             console.log(collapsed, type);
@@ -35,12 +34,12 @@ const LayOut = () => {
           <Sided />
         </Sider>
         <Layout>
-          <Header className="site-layout-sub-header-background" style={{ padding: 0 }} />
+          <Header className="site-layout-sub-header-background" style={{ padding: 0 }}>
+            <Head />
+          </Header>
           <Content >
             <div className="site-layout-background" style={{ padding: 24 }}>
-              {/* <Home /> */}
-              <Drag />
-              {/* <Edit /> */}
+              {props.children}
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
